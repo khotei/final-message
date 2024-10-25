@@ -1,0 +1,22 @@
+{
+  "name": "@final-message/core",
+  "type": "module",
+  "scripts": {
+    "dev": "tsx watch src/index.ts",
+    "build": "tsc",
+    "type-check": "tsc --noEmit",
+    "lint": "eslint",
+    "fmt": "eslint --fix",
+    "clean": "rm -rf node_modules && rm -rf .turbo && rm -rf dist"
+  },
+  "dependencies": {
+    "@hono/node-server": "^1.13.2",
+    "hono": "^4.6.6"
+  },
+  "devDependencies": {
+    "@final-message/eslint-config": "*",
+    "@types/node": "^22.8.0",
+    "eslint": "^9.13.0",
+    "tsx": "^4.7.1"
+  }
+}
