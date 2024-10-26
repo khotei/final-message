@@ -3,14 +3,15 @@ import { eq } from "drizzle-orm"
 import { Hono } from "hono"
 import { z } from "zod"
 
+import {
+  DEFAULT_LIMIT,
+  DEFAULT_OFFSET,
+} from "@/api/common/utils/default-api.constants"
 import { db } from "@/database/common/database"
 import { proposalsTable } from "@/database/schema/proposal.schema"
 import { enumProposalRole } from "@/domain/proposals/common/proposal-type.enum"
 
 export const proposalsApi = new Hono()
-
-const DEFAULT_LIMIT = 20
-const DEFAULT_OFFSET = 0
 
 proposalsApi.get(
   "/proposals",
