@@ -1,6 +1,6 @@
 import { integer, pgEnum, pgTable, varchar } from "drizzle-orm/pg-core"
 
-import { enumUserRole } from "@/users/common/user-role.enum"
+import { enumUserRole } from "@/domain/users/common/user-role.enum"
 
 export const userRoleColumn = pgEnum(
   "role",
@@ -8,7 +8,7 @@ export const userRoleColumn = pgEnum(
 )
 
 export const usersTable = pgTable("users", {
-  email: varchar().unique(),
+  email: varchar().unique().notNull(),
   id: integer().primaryKey().generatedAlwaysAsIdentity(),
-  role: userRoleColumn(),
+  role: userRoleColumn().$type<enumUserRole>().notNull(),
 })

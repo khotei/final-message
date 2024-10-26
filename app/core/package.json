@@ -8,11 +8,12 @@
     "lint": "eslint",
     "fmt": "eslint --fix",
     "clean": "rm -rf ./node_modules && rm -rf ./.turbo && rm -rf ./dist",
-    "seed": "tsx --env-file=./.env ./src/common/scripts/seed.ts",
-    "mig:create": "drizzle-kit generate --config=./src/database/common/drizzle.config.ts",
-    "mig:check": "drizzle-kit check --config=./src/database/common/drizzle.config.ts",
-    "mig:run": "drizzle-kit migrate --config=./src/database/common/drizzle.config.ts",
-    "mig:push": "drizzle-kit push --config=./src/database/common/drizzle.config.ts"
+    "db:seed": "tsx --env-file=./.env ./src/common/scripts/seed.ts",
+    "db:migration:create": "drizzle-kit generate --config=./src/database/common/drizzle.config.ts",
+    "db:migration:check": "drizzle-kit check --config=./src/database/common/drizzle.config.ts",
+    "db:migration:run": "drizzle-kit migrate --config=./src/database/common/drizzle.config.ts",
+    "db:push": "drizzle-kit push --config=./src/database/common/drizzle.config.ts",
+    "db:studio": "drizzle-kit studio --config=./src/database/common/drizzle.config.ts"
   },
   "dependencies": {
     "@hono/node-server": "^1.13.2",
