@@ -1,7 +1,7 @@
-import finalMessageCoreEslint from "@final-message/eslint-config/core.config.js"
+import { base } from "@final-message/eslint-config"
 
 export default [
-  ...finalMessageCoreEslint,
+  ...base,
   {
     ignores: ["dist"],
   },

@@ -2,9 +2,7 @@
   "name": "@final-message/eslint-config",
   "version": "1.0.0",
   "type": "module",
-  "files": [
-    "./core.config.js"
-  ],
+  "main": "./index.js",
   "peerDependencies": {
     "eslint": ">= 9"
   },
