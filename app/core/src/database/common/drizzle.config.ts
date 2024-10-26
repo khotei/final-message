@@ -2,19 +2,24 @@ import * as process from "node:process"
 
 import { type Config, defineConfig } from "drizzle-kit"
 
-const { PG_URL } = process.env
-if (!PG_URL) throw new Error("PG_URL is not defined.")
+const getPgUrl = () => {
+  const DEFAULT_PG_URL = "postgres://test:test@localhost:5432/hirely"
+  let pgUrl = DEFAULT_PG_URL
+  if (process.env.PG_URL) {
+    pgUrl = process.env.PG_URL
+  }
+  return pgUrl
+}
+export const pgUrl = getPgUrl()
 
 const drizzleConfig: Config = {
   casing: "snake_case",
   dbCredentials: {
-    url: PG_URL,
+    url: pgUrl,
   },
   dialect: "postgresql",
   out: "./src/database/migrations",
   schema: "./src/database/schema",
 }
-
-export const pgUrl = PG_URL
 
 export default defineConfig(drizzleConfig)

@@ -2,13 +2,13 @@
   "name": "@hirely/core",
   "type": "module",
   "scripts": {
-    "dev": "tsx watch --env-file=./.env ./src/index.ts",
+    "dev": "tsx watch ./src/main.ts",
     "build": "tsc",
     "type-check": "tsc --noEmit",
     "lint": "eslint",
     "fmt": "eslint --fix",
     "clean": "rm -rf ./node_modules && rm -rf ./.turbo && rm -rf ./dist",
-    "db:seed": "tsx --env-file=./.env ./src/common/scripts/seed.ts",
+    "db:seed": "tsx ./src/common/scripts/seed.ts",
     "db:migration:create": "drizzle-kit generate --config=./src/database/common/drizzle.config.ts",
     "db:migration:check": "drizzle-kit check --config=./src/database/common/drizzle.config.ts",
     "db:migration:run": "drizzle-kit migrate --config=./src/database/common/drizzle.config.ts",
@@ -17,9 +17,11 @@
   },
   "dependencies": {
     "@hono/node-server": "^1.13.2",
+    "@hono/zod-validator": "^0.4.1",
     "drizzle-orm": "^0.35.3",
     "hono": "^4.6.6",
-    "pg": "^8.13.1"
+    "pg": "^8.13.1",
+    "zod": "^3.23.8"
   },
   "devDependencies": {
     "@faker-js/faker": "^9.0.3",

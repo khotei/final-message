@@ -10,9 +10,5 @@ docker run --name hirely-postgres \
 ```
 
 ```shell
-cp ./app/core/.env.example ./app/core/.env
-```
-
-```shell
 npm run dev
 ```
