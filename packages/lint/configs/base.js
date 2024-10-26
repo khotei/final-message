@@ -11,6 +11,7 @@ export const base = tseslint.config(
     rules: {
       "no-console": 0,
       "sort-imports": 0,
+      "one-var": 0
     }
   },
   {

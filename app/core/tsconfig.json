@@ -5,6 +5,7 @@
     "strict": true,
     "baseUrl": "./",
     "outDir": "./dist",
+    "skipLibCheck": true,
     "paths": {
       "@/*": ["./src/*"]
     }

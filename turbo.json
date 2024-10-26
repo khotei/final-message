@@ -5,6 +5,7 @@
       "persistent": true
     },
     "build": {
+      "inputs": ["src/**"],
       "outputs": ["dist/**"]
     },
     "lint": {

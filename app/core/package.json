@@ -1,21 +1,28 @@
 {
-  "name": "@final-message/core",
+  "name": "@hirely/core",
   "type": "module",
   "scripts": {
-    "dev": "tsx watch src/index.ts",
+    "dev": "tsx watch --env-file=./.env ./src/index.ts",
     "build": "tsc",
     "type-check": "tsc --noEmit",
     "lint": "eslint",
     "fmt": "eslint --fix",
-    "clean": "rm -rf node_modules && rm -rf .turbo && rm -rf dist"
+    "clean": "rm -rf ./node_modules && rm -rf ./.turbo && rm -rf ./dist",
+    "mig:create": "drizzle-kit generate --config=./src/database/common/drizzle.config.ts",
+    "mig:check": "drizzle-kit check --config=./src/database/common/drizzle.config.ts",
+    "mig:run": "drizzle-kit migrate --config=./src/database/common/drizzle.config.ts"
   },
   "dependencies": {
     "@hono/node-server": "^1.13.2",
-    "hono": "^4.6.6"
+    "drizzle-orm": "^0.35.3",
+    "hono": "^4.6.6",
+    "pg": "^8.13.1"
   },
   "devDependencies": {
-    "@final-message/eslint-config": "*",
+    "@hirely/eslint-config": "*",
     "@types/node": "^22.8.0",
+    "@types/pg": "^8.11.10",
+    "drizzle-kit": "^0.26.2",
     "eslint": "^9.13.0",
     "tsx": "^4.7.1"
   }

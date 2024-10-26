@@ -1,4 +1,4 @@
-import { base } from "@final-message/eslint-config"
+import { base } from "@hirely/eslint-config"
 
 export default [
   ...base,
